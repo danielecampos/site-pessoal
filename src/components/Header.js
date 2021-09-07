@@ -14,10 +14,11 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   title: {
-    color: "tomato",
+    color: "#fff",
+    textTransform: "uppercase"
   },
   subtitle: {
-    color: "tan",
+    color: "#6a4983",
     textTransform: "uppercase",
   },
   typedContainer: {
@@ -37,18 +38,17 @@ const Header = () => {
   return (
     <Box className={classes.typedContainer}>
       <Grid container justify="center">
-        <Avatar className={classes.avatar} src={avatar} alt="Mahmudul Alam" />
+        <Avatar className={classes.avatar} src="https://media-exp1.licdn.com/dms/image/C4E03AQFHFeqaSV_uVQ/profile-displayphoto-shrink_400_400/0/1601765050762?e=1636588800&v=beta&t=T29-bxSK0vpam2YRRIPrKAkTsjlfNo5_jR15DNWR_Pg" alt="Daniele Campos" />
       </Grid>
       <Typography className={classes.title} variant="h4">
-        <Typed strings={["Mahmudul Alam"]} typeSpeed={40} />
+        Daniele Campos
       </Typography>
 
-      <Typography className={classes.subtitle} variant="h5">
+      <Typography className={classes.subtitle} variant="h6">
         <Typed
           strings={[
             "Frontend Developer",
-            "Backend Developer",
-            "Native App Developer",
+            "Backend Developer"
           ]}
           typeSpeed={40}
           backSpeed={50}

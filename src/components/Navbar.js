@@ -12,30 +12,33 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
-import ArrowBack from "@material-ui/icons/ArrowBack";
-import AssignmentInd from "@material-ui/icons/AssignmentInd";
+import MenuIcon from '@material-ui/icons/Menu';
+import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import Home from "@material-ui/icons/Home";
 import Apps from "@material-ui/icons/Apps";
-import ContactMail from "@material-ui/icons/ContactMail";
+import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import { makeStyles } from "@material-ui/core/styles";
 import avatar from "../avatar.png";
 
 import Footer from "../components/Footer";
+import { NoEncryption } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
-    background: "#222",
+    background: "#0000000d",
+    boxShadow: "none",
     margin: 0,
   },
   arrow: {
-    color: "tomato",
+    color: "#D16BA5",
   },
   title: {
-    color: "tan",
+    color: "#fff",
+    textTransform: "uppercase"
   },
   menuSliderContainer: {
-    width: 250,
-    background: "#511",
+    width: 300,
+    background: "#a74b80",
     height: "100%",
   },
   avatar: {
@@ -45,15 +48,17 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(13),
   },
   listItem: {
-    color: "tan",
+    color: "#fff",
+    textTransform: "uppercase",
+    fontSize: "12px !important"
   },
 }));
 
 const menuItems = [
   { listIcon: <Home />, listText: "Home", listPath: "/" },
-  { listIcon: <AssignmentInd />, listText: "Resume", listPath: "/resume" },
-  { listIcon: <Apps />, listText: "Portfolio", listPath: "/portfolio" },
-  { listIcon: <ContactMail />, listText: "Contact", listPath: "/contact" },
+  { listIcon: <PermIdentityIcon />, listText: "Sobre", listPath: "/resume" },
+  { listIcon: <Apps />, listText: "Portfólio", listPath: "/portfolio" },
+  { listIcon: <ChatBubbleOutlineIcon />, listText: "Vamos conversar?", listPath: "/contact" },
 ];
 
 const Navbar = () => {
@@ -63,7 +68,7 @@ const Navbar = () => {
 
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
-      <Avatar className={classes.avatar} src={avatar} alt="Mahmudul Alam" />
+      <Avatar className={classes.avatar} src={avatar} alt="Daniele Campos" />
       <Divider />
       <List>
         {menuItems.map((item, i) => (
@@ -91,10 +96,10 @@ const Navbar = () => {
         <AppBar position="static" className={classes.appbar}>
           <Toolbar>
             <IconButton onClick={() => setOpen(true)}>
-              <ArrowBack className={classes.arrow} />
+              <MenuIcon className={classes.arrow} />
             </IconButton>
-            <Typography variant="h5" className={classes.title}>
-              Portfolio
+            <Typography>
+              MENU
             </Typography>
           </Toolbar>
         </AppBar>
