@@ -1,5 +1,10 @@
-# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
-version: 2.1
-
-orbs:
-  node: circleci/node@4.1
+version: 2
+jobs:
+  build:
+    docker:
+      — image: circleci/node:7.10
+    working_directory: ~/repo
+    steps:
+      — checkout
+      - run: yarn install 
+      — run: yarn build
